@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spillside</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="/">Hjem</a></li>
+            <li><a href="/cookieclicker">Cookie Clicker</a></li>
+            <li><a href="/reactiontest">Reaksjonstest</a></li>
+            {% if 'user_id' in session %}
+                <li><a href="/logout">Logg ut</a></li>
+            {% else %}
+                <li><a href="/login">Logg inn</a></li>
+                <li><a href="/registrer">Registrer deg</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+
+    <div>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <ul>
+                    {% for category, message in messages %}
+                        <li class="{{ category }}">{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+        {% block content %}
+        {% endblock %}
+    </div>
+
+    <script src="{{url_for('static', filename='javascript.js')}}"></script>
+</body>
+</html>

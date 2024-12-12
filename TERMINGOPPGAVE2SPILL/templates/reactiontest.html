@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reaction Time Test</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+</head>
+<body>
+    <h1>Reaction Time Test</h1>
+    <p id="highscore">High Score (Best Time): Loading...</p>
+    <p id="instruction">Click the button when it turns green!</p>
+    <button id="startButton" onclick="startTest()">Start Test</button>
+    <p id="reactionTime" class="hidden">Your reaction time: <span id="timeResult">0</span> ms</p>
+
+    <script src="{{url_for('static', filename='javascriptreaksjontest.js')}}"></script>
+</body>
+</html>

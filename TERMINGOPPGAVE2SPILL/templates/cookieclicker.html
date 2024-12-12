@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookie Clicker Game</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+</head>
+<body>
+    <h1>Cookie Clicker Game</h1>
+    <p id="cookieCount">Cookies: 0</p>
+    <p id="highscore">High Score: Loading...</p>
+    <button id="cookieButton" onclick="clickCookie()">Click me!</button>
+    <p id="timeSpent">Time spent: 0 seconds</p>
+
+    <script src="{{url_for('static', filename='javacriptcookieclicker.js')}}"></script>
+</body>
+</html>

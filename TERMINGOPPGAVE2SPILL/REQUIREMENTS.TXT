@@ -1,0 +1,26 @@
+Flask==2.0.3
+Werkzeug==2.0.3
+mariadb==1.0.12
+
+
+bashen
+pip install -r requirements.txt
+
+
+
+kjør aplikasjonen
+python app.py
+
+
+
+cursor.execute('''
+    CREATE TABLE IF NOT EXISTS users (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        username VARCHAR(100) UNIQUE,
+        password_hash VARCHAR(255)
+    )
+''')
+
+
+PBKDF2 hash algorithm til Werkzeug security
+
